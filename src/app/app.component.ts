@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { CardComponent } from "./card/card.component";
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { CounterComponent } from './counter/counter.component';
 
 type Movie = {
   Title : string;
@@ -14,7 +15,7 @@ type Movie = {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileComponent, CardComponent,MovieListComponent],
+  imports: [RouterOutlet, ProfileComponent, CardComponent,MovieListComponent,CounterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

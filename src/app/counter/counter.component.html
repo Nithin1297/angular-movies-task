@@ -1,0 +1,5 @@
+<button (click)="likeIncreament()">👍 {{ like }}</button>
+<button (click)="disLikeIncreament()">👎 {{ dislike }}</button>
+@if(like >= dislike+10){
+<h2>Awesome</h2>
+}
