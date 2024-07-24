@@ -1,1 +1,15 @@
-<app-card />
+<!-- @for (movie of allMovies; track movie.Title) {
+<app-card title="{{ movie.Title }}" image="{{ movie.imageURL }}"></app-card> -->
+
+<!-- <div class="movie-list-container">
+    @for (movie of allMovies; track $index) {
+    <app-card
+      [Title]="movie.Title"
+      [imageURL]="movie.imageURL"
+      [rating]="movie.rating"
+      [discription]="movie.discription"
+    ></app-card>
+    }
+</div> -->
+<app-movie-list />
+<!-- <app-card /> -->

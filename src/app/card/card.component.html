@@ -1,18 +1,19 @@
-<body>
-  <div *ngFor="let movie of allMovies" class="movies">
+<!-- <body> -->
+  <!-- <div *ngFor="let movie of allMovies" class="movies"> -->
+    <div class="movies">
     <div class="card">
-      <img src="{{ movie.imageURL }}" alt="Avatar" />
+      <img src="{{ imageURL }}" alt="Avatar" />
       <div class="container">
         <div class="rating">
           <h4>
-            {{ movie.Title }}
+            {{ Title }}
           </h4>
-          <h3>⭐ {{movie.rating}}</h3>
+          <h3>⭐ {{rating}}</h3>
         </div>
         <p>
-          {{movie.discription}}
+          {{discription}}
         </p>
       </div>
     </div>
   </div>
-</body>
+<!-- </body> -->
