@@ -16,12 +16,12 @@ imageURL : string
 })
 export class CardComponent {
 
-  @Input() Title = "Love Today"
-      @Input() rating= 9.1
-      @Input() discription= "Love Today is a 2022 Indian Tamil-language romantic comedy film directed by Pradeep Ranganathan and produced by AGS Entertainment. The film stars Pradeep (in his acting debut), alongside Ivana, Raveena Ravi, Yogi Babu, Sathyaraj, Radhika Sarathkumar, Akshaya Udayakumar, Prathana Nathan, Adithya Kathir and Aajeedh Khalique."
-      @Input() imageURL=
+ @Input() Movies = { Title : "Love Today",
+     rating: 9.1,
+     discription: "Love Today is a 2022 Indian Tamil-language romantic comedy film directed by Pradeep Ranganathan and produced by AGS Entertainment. The film stars Pradeep (in his acting debut), alongside Ivana, Raveena Ravi, Yogi Babu, Sathyaraj, Radhika Sarathkumar, Akshaya Udayakumar, Prathana Nathan, Adithya Kathir and Aajeedh Khalique.",
+     imageURL:
       "https://upload.wikimedia.org/wikipedia/en/3/33/Love_Today_2022_poster.jpg"
-  
+  }
  
 //   allMovies : Movie [] = [];
 //   constructor(){
