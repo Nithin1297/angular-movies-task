@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ColorGameComponent } from '../color-game/color-game.component';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [],
+  imports: [FormsModule,ColorGameComponent],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.scss'
 })
@@ -19,7 +21,12 @@ this.dislike +=1
 clearLikes(){
 this.like = 0;
 }
-str = ""
 
+color =""
 
+colorarray = ['']
+
+addColor(){
+this.colorarray.push(this.color)
+}
 }

@@ -1,13 +1,23 @@
 <body>
   <div class="btn">
-      <button (click)="likeIncreament()">👍 {{ like }}</button>
-      <button (click)="disLikeIncreament()">👎 {{ dislike }}</button>
+    <button (click)="likeIncreament()">👍 {{ like }}</button>
+    <button (click)="disLikeIncreament()">👎 {{ dislike }}</button>
   </div>
   <progress [max]="like + dislike" [value]="like"></progress>
   @if(like >= dislike + 10){
   <h2>Awesome</h2>
   }
+  <input type="text" [(ngModel)]="color" [style.background]="color" />
+  <button (click)="addColor()">Add Color</button>
 
+  <p>{{ colorarray }}</p>
+  <div>
+    @for(clr of colorarray; track $index){
+    <app-color-game [clr]="clr"/>
+    }
+  </div>
+
+  <!-- ngStyle="{'background' : color}" -->
   <!-- <div class="red">
       <div class="green" ngStyle="{'max-width.px' : like}"></div>
     </div> -->
