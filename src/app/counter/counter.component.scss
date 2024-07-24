@@ -1,0 +1,18 @@
+.red{
+    background-color: red;
+    width: 100px;
+    height: 10px;
+}
+.green{
+    background-color: green;
+    height: 10px;
+}
+body{
+    display: grid;
+    // flex-wrap: wrap;
+    justify-content: center;
+    max-height: 100vh;
+}
+.btn{
+    display: flex;
+}

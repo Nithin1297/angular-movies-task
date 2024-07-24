@@ -1,5 +1,23 @@
-<button (click)="likeIncreament()">👍 {{ like }}</button>
-<button (click)="disLikeIncreament()">👎 {{ dislike }}</button>
-@if(like >= dislike+10){
-<h2>Awesome</h2>
-}
+<body>
+  <div class="btn">
+      <button (click)="likeIncreament()">👍 {{ like }}</button>
+      <button (click)="disLikeIncreament()">👎 {{ dislike }}</button>
+  </div>
+  <progress [max]="like + dislike" [value]="like"></progress>
+  @if(like >= dislike + 10){
+  <h2>Awesome</h2>
+  }
+
+  <!-- <div class="red">
+      <div class="green" ngStyle="{'max-width.px' : like}"></div>
+    </div> -->
+  <!-- <input
+    type="range"
+    min="0"
+    max={{ like }}
+    +
+    {{dislike}}
+    value="90"
+    step="10"
+  /> -->
+</body>
