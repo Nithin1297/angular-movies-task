@@ -1,12 +1,14 @@
 
 .movie-list-container {
   margin: 100px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 3rem;
   margin: 40px 80px;
   justify-content: space-evenly;
   padding-right: 20px;
 }
- 
+ .List-of-movies{
+  display: flex;
+  gap: 3rem;
+ }
  

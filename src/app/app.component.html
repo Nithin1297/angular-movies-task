@@ -12,7 +12,16 @@
     }
 </div> -->
 
-<app-addmovie [singleMovie]="movieData" />
+<!-- <app-addmovie [singleMovie]="movieData" />
+<app-movie-list [allMovies]="movieData" /> -->
 
-<app-movie-list [allMovies]="movieData" />
-<!-- <app-counter /> -->
+<header>
+  <nav>
+    <ul>
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="Profile">Profile</a></li>
+      <li><a routerLink="Movies">Movies</a></li>
+    </ul>
+  </nav>
+</header>
+<router-outlet />
