@@ -1,25 +1,42 @@
-<!-- <div *ngFor="let movie of allMovies" class="movies"> -->
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+/>
 <div class="movies">
   <div class="card">
     <img src="{{ Movies.imageURL }}" alt="Avatar" />
-    <div class="del-button"><button (click)="deleteMovie()">Delete Movie</button></div>
     <div class="container">
-      <div class="rating">
-        <h4>
+      <div class="title-des">
+        <p>
           {{ Movies.Title }}
-        </h4>
-        <h3>⭐ {{ Movies.rating }}</h3>
+        </p>
+        <button mat-button>
+          <span class="material-symbols-outlined" (click)="toggleDesMovie()">
+            stat_1
+          </span>
+        </button>
       </div>
-      <app-counter />
-      <div class="btn">
-        <button (click)="toggleDesMovie()">Show Description...</button>
-      </div>
+
+      <button mat-button>
+        <span class="material-symbols-outlined"> family_star </span
+        >{{ Movies.rating }}
+      </button>
 
       @if (showDes) {
       <p>
         {{ Movies.discription }}
       </p>
       }
+      <div class="likes-delete">
+        <app-counter />
+        <button mat-mini-fab (click)="deleteMovie()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
 </div>

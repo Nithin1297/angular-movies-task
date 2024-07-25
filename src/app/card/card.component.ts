@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input,Output } from '@angular/core';
 import { CounterComponent } from "../counter/counter.component";
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 type Movie = {
 Title : string;
@@ -11,17 +13,17 @@ imageURL : string
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule, CounterComponent,],
+  imports: [CommonModule, CounterComponent,MatIconModule,MatButtonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-@Output() delete : EventEmitter<Movie> = new EventEmitter<Movie>();
+@Output() deleteMovieEvent:EventEmitter<Movie> = new EventEmitter<Movie>();
 
 deleteMovie() {
-this.delete.emit(this.Movies)
+this.deleteMovieEvent.emit(this.Movies)
 }
-  showDes: boolean = false;
+  showDes: boolean = true;
  
   toggleDesMovie() {
     this.showDes = !this.showDes;

@@ -1,7 +1,40 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+/>
+
 <div class="form">
-    <input type="text" [(ngModel)]="Title" placeholder="Movie Name"/>
-    <input type="text" [(ngModel)]="rating" placeholder="rating"/>
-    <input type="text" [(ngModel)]="discription" placeholder="Description"/>
-    <input type="text" [(ngModel)]="imageURL" placeholder="Image URL" />
-    <button (click)="add()">Add Movie</button>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <mat-form-field class="example-full-width">
+        <mat-label>Movie Name</mat-label>
+        <input matInput [(ngModel)]="Title" />
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field class="example-full-width">
+        <mat-label>Movie Rating</mat-label>
+        <input matInput [(ngModel)]="rating" />
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field class="example-full-width">
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="discription" />
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field class="example-full-width">
+        <mat-label>Image Link</mat-label>
+        <input matInput [(ngModel)]="imageURL" />
+      </mat-form-field>
+    </tr>
+  </table>
+  <button (click)="add()" mat-raised-button class="material-symbols-outlined">
+add_box
+</button>
 </div>

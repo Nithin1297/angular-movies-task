@@ -1,11 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ColorGameComponent } from '../color-game/color-game.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [FormsModule,ColorGameComponent],
+  imports: [FormsModule,ColorGameComponent,MatBadgeModule,MatButtonModule, MatIconModule],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.scss'
 })
