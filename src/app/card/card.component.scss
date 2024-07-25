@@ -20,7 +20,16 @@
     justify-content: center;
   }
   .btn button{
-    border-radius: 50%;
+    align-items: center;
+    background: none;
+    border: none;
+    color: black;
+    // font-size: 20px;
+    cursor: pointer;
+  }
+
+  .btn button:hover{
+    color: skyblue;
   }
 
 
