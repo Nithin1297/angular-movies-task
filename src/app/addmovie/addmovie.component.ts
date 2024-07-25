@@ -5,7 +5,7 @@ import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-addmovie',
   standalone: true,
-  imports: [FormsModule,AppComponent],
+  imports: [FormsModule],
   templateUrl: './addmovie.component.html',
   styleUrl: './addmovie.component.scss'
 })
@@ -18,7 +18,6 @@ export class AddmovieComponent {
  @Input() singleMovie = [{}]
   add(){
     this.singleMovie.push({Title :this.Title,rating:this.rating,discription:this.discription,imageURL:this.imageURL});
-    // movieData.push(this.singleMovie[0])
   }
 
 }
