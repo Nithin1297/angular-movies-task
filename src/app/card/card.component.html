@@ -10,9 +10,14 @@
         </h4>
         <h3>⭐ {{ Movies.rating }}</h3>
       </div>
+      <div class="btn">
+        <button (click)="toggleDesMovie()">⬇️</button>
+      </div>
+      @if (showDes) {
       <p>
         {{ Movies.discription }}
       </p>
+      }
     </div>
   </div>
 </div>

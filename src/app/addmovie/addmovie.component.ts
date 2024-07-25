@@ -19,5 +19,4 @@ export class AddmovieComponent {
   add(){
     this.singleMovie.push({Title :this.Title,rating:this.rating,discription:this.discription,imageURL:this.imageURL});
   }
-
 }

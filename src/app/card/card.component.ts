@@ -15,6 +15,11 @@ imageURL : string
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
+  showDes: boolean = false;
+ 
+  toggleDesMovie() {
+    this.showDes = !this.showDes;
+  }
 
  @Input() Movies = { Title : "Love Today",
      rating: 9.1,
