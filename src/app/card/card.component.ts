@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { CounterComponent } from "../counter/counter.component";
 
 type Movie = {
 Title : string;
@@ -10,7 +11,7 @@ imageURL : string
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CounterComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })

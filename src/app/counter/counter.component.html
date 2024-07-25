@@ -3,7 +3,7 @@
     <button (click)="likeIncreament()">👍 {{ like }}</button>
     <button (click)="disLikeIncreament()">👎 {{ dislike }}</button>
   </div>
-  <progress [max]="like + dislike" [value]="like"></progress>
+  <!-- <progress [max]="like + dislike" [value]="like"></progress>
   @if(like >= dislike + 10){
   <h2>Awesome</h2>
   }
@@ -15,7 +15,7 @@
     @for(clr of colorarray; track $index){
     <app-color-game [clr]="clr"/>
     }
-  </div>
+  </div> -->
 
   <!-- ngStyle="{'background' : color}" -->
   <!-- <div class="red">

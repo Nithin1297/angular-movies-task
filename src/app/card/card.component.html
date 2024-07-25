@@ -10,9 +10,11 @@
         </h4>
         <h3>⭐ {{ Movies.rating }}</h3>
       </div>
+      <app-counter />
       <div class="btn">
         <button (click)="toggleDesMovie()">Show Description...</button>
       </div>
+      
       @if (showDes) {
       <p>
         {{ Movies.discription }}
