@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './color-game.component.scss'
 })
 export class ColorGameComponent {
-@Input() clr = 'blue'
+@Input() clr = ''
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CardComponent } from '../card/card.component';
+import { AddmovieComponent } from '../addmovie/addmovie.component';
 
 type Movie = {
   Title : string;
@@ -11,7 +12,7 @@ type Movie = {
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent,AddmovieComponent],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss'
 })

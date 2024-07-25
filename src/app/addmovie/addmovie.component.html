@@ -1,0 +1,8 @@
+<div class="form">
+    <input type="text" [(ngModel)]="Title" placeholder="Movie Name"/>
+    <input type="text" [(ngModel)]="rating" placeholder="rating"/>
+    <input type="text" [(ngModel)]="discription" placeholder="Description"/>
+    <input type="text" [(ngModel)]="imageURL" placeholder="Image URL" />
+    <button (click)="add()">Add Movie</button>
+    <p>{{singleMovie[0]}}</p>
+</div>

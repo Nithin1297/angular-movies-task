@@ -1,21 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { CardComponent } from "./card/card.component";
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { CounterComponent } from './counter/counter.component';
-
-type Movie = {
-  Title : string;
-  rating: number;
-  discription: string;
-  imageURL : string
-  }
+import { AddmovieComponent } from "./addmovie/addmovie.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileComponent, CardComponent,MovieListComponent,CounterComponent],
+  imports: [RouterOutlet, ProfileComponent, CardComponent, MovieListComponent, CounterComponent, AddmovieComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -24,7 +18,7 @@ type Movie = {
 export class AppComponent {
 
 
-  movieData = [
+ @Input() movieData = [
     {
       Title: "Love Today",
       rating: 9.1,
@@ -41,13 +35,13 @@ export class AppComponent {
     {
       Title: "PS1",
       rating: 9.4,
-      discription: "Ponniyin Selvan: I (PS-1, transl. The Son of Ponni) is a 2022 Indian Tamil-language epic action drama film directed by Mani Ratnam, who co-wrote it with Elango Kumaravel and B. Jeyamohan.",
+      discription: "Ponniyin Selvan: I (PS-1, transl.The Son of Ponni) is a 2022 Indian Tamil-language epic action drama film directed by Mani Ratnam, who co-wrote it with Elango Kumaravel and B. Jeyamohan.",
       imageURL: "https://i.redd.it/lq72e1sl4fo91.jpg",
     },
     {
       Title: "Sardar",
       rating: 9.5,
-      discription: "Sardar (transl. Chief) is a 2022 Indian Tamil-language spy action-thriller film written and directed by P. S. Mithran and produced by S. Lakshman Kumar under his production banner Prince Pictures.",
+      discription: "Sardar (transl.Chief) is a 2022 Indian Tamil-language spy action-thriller film written and directed by P. S. Mithran and produced by S. Lakshman Kumar under his production banner Prince Pictures.",
       imageURL: "https://pbs.twimg.com/media/FbkXGJMXoAAcye0.jpg",
     },
   ];
