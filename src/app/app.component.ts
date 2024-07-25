@@ -18,7 +18,7 @@ import { AddmovieComponent } from "./addmovie/addmovie.component";
 export class AppComponent {
 
 
- @Input() movieData = [
+  movieData = [
     {
       Title: "Love Today",
       rating: 9.1,
