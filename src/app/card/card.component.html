@@ -14,10 +14,12 @@
         <p>
           {{ Movies.Title }}
         </p>
-        <button mat-button>
-          <span class="material-symbols-outlined" (click)="toggleDesMovie()">
-            stat_1
-          </span>
+        <button mat-button (click)="toggleDesMovie()">
+          @if (showDes) {
+          <span class="material-symbols-outlined"> keyboard_arrow_up </span>}
+          @else{
+          <span class="material-symbols-outlined"> keyboard_arrow_down </span>
+          }
         </button>
       </div>
 
