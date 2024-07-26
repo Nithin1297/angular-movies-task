@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 
+type Movie = {
+  Title : string;
+  rating: number;
+  discription: string;
+  imageURL : string
+  }
 @Injectable({
   providedIn: 'root'
 })
@@ -37,5 +43,12 @@ export class MovieService {
 
   getMovies(){
     
+  }
+
+  deleteMovies(movie : Movie){
+    const index = this.movieData.indexOf(movie);
+    if( index != -1){
+      this.movieData.splice(index,1);
+    }
   }
 }
