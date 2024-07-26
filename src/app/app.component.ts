@@ -8,6 +8,7 @@ import { AddmovieComponent } from './addmovie/addmovie.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MovieService } from './movie.service';
 
 @Component({
   selector: 'app-root',
@@ -27,4 +28,8 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private movieService : MovieService){
+    console.log(this.movieService.num)
+  }
+}

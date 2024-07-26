@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ColorGameComponent } from './color-game/color-game.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AddmovieComponent } from './addmovie/addmovie.component';
 
 export const routes: Routes = [
     {
@@ -17,6 +18,9 @@ export const routes: Routes = [
     },
     {
         path: 'Movies',component: MovieListComponent
+    },
+    {
+        path: 'Movies/add',component: AddmovieComponent
     },
     {
         path: '**',component: PageNotFoundComponent

@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-addmovie',
@@ -12,13 +13,18 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './addmovie.component.scss'
 })
 export class AddmovieComponent {
+
+  constructor(public movieService : MovieService){
+
+  }
+
   Title = "";
-  rating = "";
+  rating = 1;
   discription = "";
   imageURL = "";
 
- @Input() singleMovie = [{}]
+//  @Input() singleMovie = [{}]
   add(){
-    this.singleMovie.push({Title :this.Title,rating:this.rating,discription:this.discription,imageURL:this.imageURL});
+    this.movieService.movieData.push({Title :this.Title,rating:this.rating,discription:this.discription,imageURL:this.imageURL});
   }
 }

@@ -1,7 +1,7 @@
 <div class="movie-list-container">
-  <app-addmovie [singleMovie]="movieData" />
+  <!-- <app-addmovie [singleMovie]="movieData" /> -->
   <div class="List-of-movies">
-    @for (movie of movieData; track $index) {
+    @for (movie of movieService.movieData; track $index) {
     <app-card [Movies]="movie" (deleteMovieEvent)="deleteMovies($event)" />
 
     }
