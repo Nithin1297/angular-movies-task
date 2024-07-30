@@ -30,6 +30,6 @@ import { MovieService } from './movie.service';
 })
 export class AppComponent {
   constructor(private movieService : MovieService){
-    console.log(this.movieService.num)
+    
   }
 }

@@ -17,14 +17,15 @@ export class AddmovieComponent {
   constructor(public movieService : MovieService){
 
   }
-
+  id = 0
   Title = "";
   rating = 1;
   discription = "";
   imageURL = "";
+  trailer = ""
 
 //  @Input() singleMovie = [{}]
   add(){
-    this.movieService.movieData.push({Title :this.Title,rating:this.rating,discription:this.discription,imageURL:this.imageURL});
+    this.movieService.movieData.push({id:this.id,Title :this.Title,rating:this.rating,discription:this.discription,imageURL:this.imageURL,trailer:this.trailer});
   }
 }

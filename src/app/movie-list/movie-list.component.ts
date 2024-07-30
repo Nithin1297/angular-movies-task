@@ -13,6 +13,7 @@ import { MovieService } from '../movie.service';
   styleUrl: './movie-list.component.scss'
 })
 export class MovieListComponent {
+idx: any;
 
   constructor(public movieService : MovieService){
     

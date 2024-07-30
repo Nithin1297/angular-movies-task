@@ -5,6 +5,7 @@ import { ColorGameComponent } from './color-game/color-game.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,9 @@ export const routes: Routes = [
     },
     {
         path: 'Movies',component: MovieListComponent
+    },
+    {
+        path: 'Movies/:id',component: MovieDetailsComponent
     },
     {
         path: 'Movies/add',component: AddmovieComponent
