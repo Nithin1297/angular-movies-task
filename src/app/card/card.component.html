@@ -21,7 +21,8 @@
           <span class="material-symbols-outlined"> keyboard_arrow_down </span>
           }
         </button>
-        <button  routerLink="/Movies/{{ id }}" mat-icon-button>
+        
+        <button  routerLink="/movies/{{ movie.id }}" mat-icon-button>
           <span class="material-symbols-outlined"> info</span>
         </button>
       </div>
@@ -30,6 +31,9 @@
       <span class="material-symbols-outlined"> family_star </span
       >{{ movie.rating }}
       <!-- </button> -->
+      <button  routerLink="/movies/edit/{{ movie.id }}" mat-icon-button>
+        <span class="material-symbols-outlined"> Edit</span>
+      </button>
 
       @if (showDes) {
       <p>

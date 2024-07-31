@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Movie, MovieService } from '../movie.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -8,35 +8,30 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './movie-details.component.html',
-  styleUrl: './movie-details.component.scss',
+  styleUrls: ['./movie-details.component.scss'],
 })
-export class MovieDetailsComponent {
+export class MovieDetailsComponent implements OnInit {
   trustedUrl!: SafeUrl;
-  movie !: Movie;
+  movie!: Movie;
   isLoading: boolean = true;
-  msg = '';
+  msg: string = '';
 
   constructor(
     private movieService: MovieService,
-    private route: ActivatedRoute, // DI
+    private route: ActivatedRoute,
     private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id') as string; // From URL
+    const id = this.route.snapshot.paramMap.get('id') as string;
 
-    this.movieService
-      .getMovieByIdP(id)
+    this.movieService.getMovieByIdP(id)
       .then((data) => {
-        this.movie = data; // Model
-        this.isLoading = false;
-        this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-          this.movie.trailer
-        );
+        this.movie = data;
       })
-      .catch(() => {
-        this.isLoading = false;
-        this.msg = 'Something went wrong 🥲';
+      .catch((error) => {
+        this.msg = 'Movie not found or an error occurred.';
+        console.error('Error fetching movie:', error);
       });
   }
 }

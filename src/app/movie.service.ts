@@ -27,7 +27,7 @@ export class MovieService {
     },
     {
       id: '',
-      Title: 'Beast',
+      name: 'Beast',
       rating: 8.0,
       summary:
         'Beast is a 2022 Indian Tamil-language action comedy film written and directed by Nelson Dilipkumar and produced by Kalanithi Maran under Sun Pictures. The film stars Vijay and Pooja Hegde in the lead roles, alongside Selvaraghavan, Shaji Chen, VTV Ganesh, Ankur Vikal, Aparna Das, Sathish Krishnan, Shine Tom Chacko, Yogi Babu and Redin Kingsley.',
@@ -77,10 +77,19 @@ export class MovieService {
       (res) => res.json()
     );
   }
+  
   getMovieByIdP(id: string): Promise<Movie> {
-    return fetch(
-      `https://669a42859ba098ed61fef71c.mockapi.io/Movies/${id}`
-    ).then((res) => res.json());
+    return fetch(`https://669a42859ba098ed61fef71c.mockapi.io/Movies/${id}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Movie not found');
+        }
+        return res.json();
+      })
+      .catch((error) => {
+        console.error('Error fetching movie:', error);
+        throw error; // Rethrow the error for further handling
+      });
   }
 
   getMovieByIdex(id: number) {
@@ -92,5 +101,20 @@ export class MovieService {
       `https://669a42859ba098ed61fef71c.mockapi.io/Movies/${movie.id}`,
       { method: 'Delete' }
     ).then((res) => res.json());
+  }
+
+  updateMovie(updatedMovie: Movie): Promise<void> {
+    return fetch(`https://669a42859ba098ed61fef71c.mockapi.io/Movies/${updatedMovie.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedMovie),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => {
+      if (!res.ok) {
+        throw new Error('Failed to update movie');
+      }
+      return res.json();
+    });
   }
 }
