@@ -33,7 +33,14 @@
         <input matInput [(ngModel)]="poster" />
       </mat-form-field>
     </tr>
+    <tr>
+      <mat-form-field class="example-full-width">
+        <mat-label>Trailer</mat-label>
+        <input matInput [(ngModel)]="trailer" />
+      </mat-form-field>
+    </tr>
   </table>
+  
   <button (click)="add()" mat-raised-button class="material-symbols-outlined">
 add_box
 </button>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { newMovie } from './movie-interface';
 
 export type Movie = {
   id: string;
@@ -54,6 +55,18 @@ export class MovieService {
   ];
 
   constructor() {}
+
+  addMovie(newMovie : newMovie) {
+    return fetch('https://669a42859ba098ed61fef71c.mockapi.io/Movies',{
+      method : "POST",
+      body : JSON.stringify(newMovie),
+      headers : {
+        "content-type" : "application/json"
+      }
+    }).then(
+      (res) => res.json()
+    );
+  }
 
   getMovieList() {
     return this.movieData;

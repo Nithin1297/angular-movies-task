@@ -8,25 +8,32 @@ import { AddmovieComponent } from './addmovie/addmovie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 export const routes: Routes = [
-    {
-        path: '',component: HomeComponent,
-    },
-    {
-        path: 'Profile',component: ProfileComponent
-    },
-    {
-        path: 'game',component: ColorGameComponent
-    },
-    {
-        path: 'Movies',component: MovieListComponent
-    },
-    {
-        path: 'Movies/:id',component: MovieDetailsComponent
-    },
-    {
-        path: 'Movies/add',component: AddmovieComponent
-    },
-    {
-        path: '**',component: PageNotFoundComponent
-    }
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'Profile',
+    component: ProfileComponent,
+  },
+  {
+    path: 'game',
+    component: ColorGameComponent,
+  },
+  {
+    path: 'Movies',
+    component: MovieListComponent,
+  },
+  {
+    path: 'Movies/:id',
+    component: MovieDetailsComponent,
+  },
+  {
+    path: 'add',
+    component: AddmovieComponent,
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+  },
 ];
