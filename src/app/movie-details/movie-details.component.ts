@@ -18,14 +18,25 @@ export class MovieDetailsComponent {
     private movieService: MovieService,
     private route: ActivatedRoute, // DI
     private sanitizer: DomSanitizer
-  ) {
-    let idx = this.route.snapshot.paramMap.get('id') || 0; // From URL
-    console.log(idx);
-    this.movie = this.movieService.getMovieByIdex(+idx);
-    console.log(this.movie);
+  ) {}
+  isLoading: boolean = true;
+  msg = '';
 
-    this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-      this.movie.trailer
-    );
+  ngOnInit() {
+    let id = this.route.snapshot.paramMap.get('id') as string; // From URL
+
+    this.movieService
+      .getMovieByIdP(id)
+      .then((data) => {
+        this.movie = data; // Model
+        this.isLoading = false;
+        this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+          this.movie.trailer
+        );
+      })
+      .catch(() => {
+        this.isLoading = false;
+        this.msg = 'Something went wrong 🥲';
+      });
   }
 }
