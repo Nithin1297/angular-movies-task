@@ -68,10 +68,6 @@ export class MovieService {
     );
   }
 
-  getMovieList() {
-    return this.movieData;
-  }
-
   getAllMoviesP(): Promise<Movie[]> {
     return fetch('https://669a42859ba098ed61fef71c.mockapi.io/Movies').then(
       (res) => res.json()
@@ -92,9 +88,6 @@ export class MovieService {
       });
   }
 
-  getMovieByIdex(id: number) {
-    return this.movieData[id];
-  }
 
   deleteMovie(movie: Movie) {
     return fetch(

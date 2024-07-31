@@ -19,7 +19,7 @@ export class MovieDetailsComponent implements OnInit {
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer
+    // private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
