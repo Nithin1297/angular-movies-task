@@ -6,7 +6,7 @@
     @for (movie of  movieData; track movie.id) {
     <app-card
       [movie]="movie"
-      (deleteMovieEvent)="movieService.deleteMovie($event)"
+      (deleteMovieEvent)="deleteMovieP(movie)"
       [id] = "movie.id"
     />
 

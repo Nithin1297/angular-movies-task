@@ -20,7 +20,7 @@ export class CardComponent {
 
   @Input() idx: any;
   deleteMovie() {
-    this.deleteMovieEvent.emit(this.movie);
+    this.deleteMovieEvent.emit(this.movie); // Emit the movie to be deleted
   }
   showDes: boolean = true;
 

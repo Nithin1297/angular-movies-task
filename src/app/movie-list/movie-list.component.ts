@@ -37,7 +37,12 @@ export class MovieListComponent {
   }
 
   deleteMovieP(movie: Movie) {
-    this.movieService.deleteMovie(movie).then(() => this.loadMovies());
+    this.movieService.deleteMovie(movie).then(() => {
+      this.loadMovies(); // Reload movies after deletion
+    }).catch((error) => {
+      console.error('Error deleting movie:', error);
+      this.msg = 'Failed to delete movie.';
+    });
   }
 
 
