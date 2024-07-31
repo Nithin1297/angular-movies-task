@@ -1,12 +1,16 @@
 <div class="movie-list-container">
   <div class="List-of-movies">
-    @for (movie of movieService.movieData; track $index) {
+    @if(isLoading){
+      <h1>Loading...</h1>
+      } 
+    @for (movie of moviesdata; track $index) {
     <app-card
       [Movies]="movie"
       (deleteMovieEvent)="movieService.deleteMovies($event)"
-      [idx] = "$index"
+      [idx] = "movie.id"
     />
 
     }
   </div>
 </div>
+<h1>{{ msg }}</h1>

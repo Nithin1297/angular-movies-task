@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 
 export type Movie = {
-  id : number;
-  Title: string;
+  id : string;
+  name: string;
   rating: number;
-  discription: string;
-  imageURL: string;
+  summary: string;
+  poster: string;
   trailer : string;
 };
 @Injectable({
@@ -15,43 +15,61 @@ export class MovieService {
   // num = 5;
   movieData = [
     {
-      id: 1,
-      Title: 'Love Today',
+      id: "",
+      name: 'Love Today',
       rating: 9.1,
-      discription:
+      summary:
         'Love Today is a 2022 Indian Tamil-language romantic comedy film directed by Pradeep Ranganathan and produced by AGS Entertainment. The film stars Pradeep (in his acting debut), alongside Ivana, Raveena Ravi, Yogi Babu, Sathyaraj, Radhika Sarathkumar, Akshaya Udayakumar, Prathana Nathan, Adithya Kathir and Aajeedh Khalique.',
-      imageURL:
+      poster:
         'https://upload.wikimedia.org/wikipedia/en/3/33/Love_Today_2022_poster.jpg',
         trailer : ""
     },
     {
-      id: 2,
+      id: "",
       Title: 'Beast',
       rating: 8.0,
-      discription:
+      summary:
         'Beast is a 2022 Indian Tamil-language action comedy film written and directed by Nelson Dilipkumar and produced by Kalanithi Maran under Sun Pictures. The film stars Vijay and Pooja Hegde in the lead roles, alongside Selvaraghavan, Shaji Chen, VTV Ganesh, Ankur Vikal, Aparna Das, Sathish Krishnan, Shine Tom Chacko, Yogi Babu and Redin Kingsley.',
-      imageURL: 'https://pbs.twimg.com/media/E4bQvR5XwAI3Dzp.jpg',
+      poster: 'https://pbs.twimg.com/media/E4bQvR5XwAI3Dzp.jpg',
       trailer : ""
     },
     {
-      id: 3,
-      Title: 'PS1',
+      id: "",
+      name: 'PS1',
       rating: 9.4,
-      discription:
+      summary:
         'Ponniyin Selvan: I (PS-1, transl.The Son of Ponni) is a 2022 Indian Tamil-language epic action drama film directed by Mani Ratnam, who co-wrote it with Elango Kumaravel and B. Jeyamohan.',
-      imageURL: 'https://i.redd.it/lq72e1sl4fo91.jpg',
+      poster: 'https://i.redd.it/lq72e1sl4fo91.jpg',
       trailer : ""
     },
     {
-      id: 4,
-      Title: 'Sardar',
+      id: "",
+      name: 'Sardar',
       rating: 9.5,
-      discription:
+      summary:
         'Sardar (transl.Chief) is a 2022 Indian Tamil-language spy action-thriller film written and directed by P. S. Mithran and produced by S. Lakshman Kumar under his production banner Prince Pictures.',
-      imageURL: 'https://pbs.twimg.com/media/FbkXGJMXoAAcye0.jpg',
+      poster: 'https://pbs.twimg.com/media/FbkXGJMXoAAcye0.jpg',
       trailer : ""
     },
   ];
+
+  
+
+  getMovieList() {
+    return this.movieData;
+  }
+
+
+  getAllMoviesP(): Promise<Movie[]> {
+    return fetch('https://669a42859ba098ed61fef71c.mockapi.io/Movies').then(
+      (res) => res.json()
+    );
+  }
+  getMovieByIdP(id: string): Promise<Movie> {
+    return fetch(
+      `https://669a42859ba098ed61fef71c.mockapi.io/Movies/${id}`
+    ).then((res) => res.json());
+  }
 
   constructor() {}
 

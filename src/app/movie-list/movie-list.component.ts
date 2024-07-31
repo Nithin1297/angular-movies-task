@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { AddmovieComponent } from '../addmovie/addmovie.component';
-import { MovieService } from '../movie.service';
+import { Movie, MovieService } from '../movie.service';
 
 
 
@@ -13,9 +13,30 @@ import { MovieService } from '../movie.service';
   styleUrl: './movie-list.component.scss'
 })
 export class MovieListComponent {
-idx: any;
+  idx: any;
+  isLoading: boolean = true;
+  msg = '';
+  moviesdata : Array<Movie> = [];
+  constructor (public movieService: MovieService) {}
 
-  constructor(public movieService : MovieService){
-    
+  ngOnInit() {
+    this.movieService
+      .getAllMoviesP()
+      .then((data) => {
+        this.moviesdata = data;
+        this.isLoading = false;
+      })
+      .catch(() => {
+        this.isLoading = false;
+        this.msg = 'Something went wrong 🥲';
+      });
   }
+
+  deleteMovieP(movie: Movie) {
+    console.log('Parent ❌', movie);
+    this.movieService.deleteMovies(movie);
+  }
+
+
+ 
 }

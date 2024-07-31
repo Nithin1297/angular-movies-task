@@ -8,11 +8,11 @@
 />
 <div class="movies">
   <div class="card">
-    <img src="{{ Movies.imageURL }}" alt="Avatar" />
+    <img src="{{ Movies.poster }}" alt="Avatar" />
     <div class="container">
       <div class="title-des">
         <p>
-          {{ Movies.Title }}
+          {{ Movies.name }}
         </p>
         <button mat-button (click)="toggleDesMovie()">
           @if (showDes) {
@@ -33,7 +33,7 @@
 
       @if (showDes) {
       <p>
-        {{ Movies.discription }}
+        {{ Movies.summary }}
       </p>
       }
       <div class="likes-delete">
