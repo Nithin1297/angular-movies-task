@@ -3,11 +3,11 @@
     @if(isLoading){
       <h1>Loading...</h1>
       } 
-    @for (movie of moviesdata; track movie.id) {
+    @for (movie of  movieData; track movie.id) {
     <app-card
-      [Movies]="movie"
-      (deleteMovieEvent)="movieService.deleteMovies($event)"
-      [idx] = "movie.id"
+      [movie]="movie"
+      (deleteMovieEvent)="movieService.deleteMovie($event)"
+      [id] = "movie.id"
     />
 
     }

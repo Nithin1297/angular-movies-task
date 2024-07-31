@@ -20,7 +20,7 @@ export class CardComponent {
 
   @Input() idx: any;
   deleteMovie() {
-    this.deleteMovieEvent.emit(this.Movies);
+    this.deleteMovieEvent.emit(this.movie);
   }
   showDes: boolean = true;
 
@@ -28,7 +28,7 @@ export class CardComponent {
     this.showDes = !this.showDes;
   }
 
-  @Input() Movies = {
+  @Input() movie = {
     id:"",
     name: 'Love Today',
     rating: 9.1,

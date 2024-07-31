@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MovieDetailsComponent {
   trustedUrl!: SafeUrl;
-  movie: any;
+  movie !: Movie;
   isLoading: boolean = true;
   msg = '';
 

@@ -16,14 +16,18 @@ export class MovieListComponent {
   idx: any;
   isLoading: boolean = true;
   msg = '';
-  moviesdata : Array<Movie> = [];
+  movieData : Array<Movie> = [];
   constructor (public movieService: MovieService) {}
 
   ngOnInit() {
+    this.loadMovies();
+  }
+
+  loadMovies() {
     this.movieService
       .getAllMoviesP()
       .then((data) => {
-        this.moviesdata = data;
+        this. movieData = data;
         this.isLoading = false;
       })
       .catch(() => {
@@ -33,8 +37,7 @@ export class MovieListComponent {
   }
 
   deleteMovieP(movie: Movie) {
-    console.log('Parent ❌', movie);
-    this.movieService.deleteMovies(movie);
+    this.movieService.deleteMovie(movie).then(() => this.loadMovies());
   }
 
 

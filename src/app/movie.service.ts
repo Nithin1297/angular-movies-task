@@ -84,14 +84,13 @@ export class MovieService {
   }
 
   getMovieByIdex(id: number) {
-    // return this.movieData.find(movie => movie.id == id);
     return this.movieData[id];
   }
 
-  deleteMovies(movie: Movie) {
-    const index = this.movieData.indexOf(movie);
-    if (index != -1) {
-      this.movieData.splice(index, 1);
-    }
+  deleteMovie(movie: Movie) {
+    return fetch(
+      `https://669a42859ba098ed61fef71c.mockapi.io/Movies/${movie.id}`,
+      { method: 'Delete' }
+    ).then((res) => res.json());
   }
 }

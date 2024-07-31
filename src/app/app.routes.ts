@@ -16,6 +16,7 @@ export const routes: Routes = [
   {
     path: 'Profile',
     component: ProfileComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'game',
@@ -25,7 +26,7 @@ export const routes: Routes = [
     path: 'movies',
     children: [
       { path: '', component: MovieListComponent },
-      { path: 'add', component: AddmovieComponent,canActivate: [authGuard] },
+      { path: 'add', component: AddmovieComponent, canActivate: [authGuard] },
       { path: ':id', component: MovieDetailsComponent },
     ],
   },
