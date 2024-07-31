@@ -32,7 +32,7 @@ export class AddmovieComponent {
       trailer: this.trailer,
     };
     this.movieService.addMovie(newMovie).then(() => {
-      this.router.navigate(['Movies']);
+      this.router.navigate(['movies']);
     });
   }
 }
