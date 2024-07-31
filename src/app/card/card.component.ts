@@ -4,16 +4,18 @@ import { CounterComponent } from '../counter/counter.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Movie, MovieService } from '../movie.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule, CounterComponent, MatIconModule, MatButtonModule],
+  imports: [CommonModule, CounterComponent, MatIconModule, MatButtonModule,RouterLink,],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
+  @Input() id!: string;
   @Output() deleteMovieEvent: EventEmitter<Movie> = new EventEmitter<Movie>();
 
   @Input() idx: any;

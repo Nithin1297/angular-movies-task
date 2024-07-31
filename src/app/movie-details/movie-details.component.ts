@@ -13,14 +13,14 @@ import { ActivatedRoute } from '@angular/router';
 export class MovieDetailsComponent {
   trustedUrl!: SafeUrl;
   movie: any;
+  isLoading: boolean = true;
+  msg = '';
 
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute, // DI
     private sanitizer: DomSanitizer
   ) {}
-  isLoading: boolean = true;
-  msg = '';
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id') as string; // From URL
