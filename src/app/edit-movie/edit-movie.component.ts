@@ -24,11 +24,11 @@ export class EditMovieComponent {
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id') as string; // Get movie ID from URL
+    const id = this.route.snapshot.paramMap.get('id') as string; 
 
     this.movieService.getMovieByIdP(id)
       .then((data) => {
-        this.movie = data; // Populate the movie object with data
+        this.movie = data; 
       })
       .catch(() => {
         this.msg = 'Something went wrong 🥲';
@@ -38,7 +38,7 @@ export class EditMovieComponent {
   editMovie() {
     this.movieService.updateMovie(this.movie)
       .then(() => {
-        this.router.navigate(['/movies']); // Navigate back to the movie list after editing
+        this.router.navigate(['/movies']); 
       })
       .catch(() => {
         this.msg = 'Failed to update movie';
