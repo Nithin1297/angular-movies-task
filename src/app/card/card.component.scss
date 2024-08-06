@@ -29,15 +29,16 @@
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
-  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
 }
 .likes-delete{
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
+}
+
+.rat-edit{
+  display: flex;
+  justify-content: space-between;
 }

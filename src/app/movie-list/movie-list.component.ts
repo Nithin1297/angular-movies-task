@@ -44,7 +44,5 @@ export class MovieListComponent {
       this.msg = 'Failed to delete movie.';
     });
   }
-
-
  
 }

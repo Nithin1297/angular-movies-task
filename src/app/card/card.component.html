@@ -27,13 +27,15 @@
         </button>
       </div>
 
-      <!-- <button mat-button> -->
-      <span class="material-symbols-outlined"> family_star </span
-      >{{ movie.rating }}
-      <!-- </button> -->
-      <button  routerLink="/movies/edit/{{ movie.id }}" mat-icon-button>
-        <span class="material-symbols-outlined"> Edit</span>
-      </button>
+      <div class="rat-edit">
+        <div>
+          <span mat-icon class="material-symbols-outlined"> family_star </span
+          >{{ movie.rating }}
+        </div>
+        <button  routerLink="/movies/edit/{{ movie.id }}" mat-icon-button>
+          <span class="material-symbols-outlined"> Edit</span>
+        </button>
+      </div>
 
       @if (showDes) {
       <p>
