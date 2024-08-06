@@ -14,7 +14,8 @@ export type Movie = {
 })
 export class MovieService {
   // API = `https://669a42859ba098ed61fef71c.mockapi.io/Movies`;
-  API = `http://localhost:4000`;
+  // API = `http://localhost:4000`;
+  API = `https://node-8hsv.onrender.com`;
   // num = 5;
   movieData = [
     {
