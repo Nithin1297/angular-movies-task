@@ -13,6 +13,8 @@ export type Movie = {
   providedIn: 'root',
 })
 export class MovieService {
+  // API = `https://669a42859ba098ed61fef71c.mockapi.io/Movies`;
+  API = `http://localhost:4000`;
   // num = 5;
   movieData = [
     {
@@ -56,26 +58,22 @@ export class MovieService {
 
   constructor() {}
 
-  addMovie(newMovie : newMovie) {
-    return fetch('https://669a42859ba098ed61fef71c.mockapi.io/Movies',{
-      method : "POST",
-      body : JSON.stringify(newMovie),
-      headers : {
-        "content-type" : "application/json"
-      }
-    }).then(
-      (res) => res.json()
-    );
+  addMovie(newMovie: newMovie) {
+    return fetch(this.API, {
+      method: 'POST',
+      body: JSON.stringify(newMovie),
+      headers: {
+        'content-type': 'application/json',
+      },
+    }).then((res) => res.json());
   }
 
   getAllMoviesP(): Promise<Movie[]> {
-    return fetch('https://669a42859ba098ed61fef71c.mockapi.io/Movies').then(
-      (res) => res.json()
-    );
+    return fetch(`${this.API}/movies`).then((res) => res.json());
   }
-  
+
   getMovieByIdP(id: string): Promise<Movie> {
-    return fetch(`https://669a42859ba098ed61fef71c.mockapi.io/Movies/${id}`)
+    return fetch(`${this.API}/movies/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Movie not found');
@@ -88,16 +86,14 @@ export class MovieService {
       });
   }
 
-
   deleteMovie(movie: Movie) {
-    return fetch(
-      `https://669a42859ba098ed61fef71c.mockapi.io/Movies/${movie.id}`,
-      { method: 'Delete' }
-    ).then((res) => res.json());
+    return fetch(`${this.API}/movies/${movie.id}`, {
+      method: 'Delete',
+    }).then((res) => res.json());
   }
 
   updateMovie(updatedMovie: Movie): Promise<void> {
-    return fetch(`https://669a42859ba098ed61fef71c.mockapi.io/Movies/${updatedMovie.id}`, {
+    return fetch(`${this.API}/movies/${updatedMovie.id}`, {
       method: 'PUT',
       body: JSON.stringify(updatedMovie),
       headers: {
